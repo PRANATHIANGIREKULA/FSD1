@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <title>Team Registration</title>
+    <link rel="stylesheet" href="teamreg.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+          .center {
+                 height: 80vh; /* Set a fixed height for scrolling */
+                 overflow: auto; /* Enable scrolling if content exceeds the height */
+                 margin-top: 50px; /* Additional margin for moving the form downwards */
+            }
+    </style>
+</head>
+<body>
+    
+
+    <header>
+        <section class="header">
+            <nav> 
+                <div class="nav-links">
+                    <ul>
+
+                        <li>
+                            <a href="main.html">
+                                <i class="fas fa-home"></i>
+                            </a>
+                        </li>
+                        <li><a href="teamreg.html">TeamRegistration</a></li>
+                        <li><a href="mentorreg.html">MentorRegistration</a></li>
+                        <li><a href="vote.html">Vote</a></li>
+                        <li><a href="chat.html">Share Your Views</a></li>
+                        <li><a href="checkpoint1.html">Checkpoints</a></li>
+                        <li><a href="juryreview.html">JuryReviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <br>
+            </nav>
+        </section>
+    </header>
+    <div class="container">
+        <div class="center">
+            <h1>Team Registration</h1>
+            <form method="POST" action="main.html">
+                <div class="txt_field">
+                    <input type="text" name="team_name" required>
+                    <span></span>
+                    <label>Team Name</label>
+                </div>
+                <div class="txt_field">
+                    <input type="text" name="leader_name" required>
+                    <span></span>
+                    <label>Team Leader Name</label>
+                </div>
+                <div class="txt_field">
+                    <input type="email" name="leader_email" required>
+                    <span></span>
+                    <label>Team Leader Email</label>
+                </div>
+                <div class="txt_field">
+                    <input type="text" name="member1_name" required>
+                    <span></span>
+                    <label>Team Member 1 Name</label>
+                </div>
+                <div class="txt_field">
+                    <input type="email" name="member1_email" required>
+                    <span></span>
+                    <label>Team Member 1 Email</label>
+                </div>
+                <div class="txt_field">
+                  <input type="text" name="member2_name" required>
+                  <span></span>
+                  <label>Team Member 2 Name</label>
+              </div>
+              <div class="txt_field">
+                  <input type="email" name="member2_email" required>
+                  <span></span>
+                  <label>Team Member 2 Email</label>
+              </div>
+              <div class="txt_field">
+                  <input type="text" name="member3_name" required>
+                  <span></span>
+                  <label>Team Member 3 Name</label>
+              </div>
+              <div class="txt_field">
+                  <input type="email" name="member3_email" required>
+                  <span></span>
+                  <label>Team Member 3 Email</label>
+              </div>
+              <div class="txt_field">
+                  <input type="text" name="member4_name" required>
+                  <span></span>
+                  <label>Team Member 4 Name</label>
+              </div>
+              <div class="txt_field">
+                  <input type="email" name="member4_email" required>
+                  <span></span>
+                  <label>Team Member 4 Email</label>
+              </div>  
+                <input name="submit" type="Submit" value="Register" onclick="showSuccessMessage()">
+            </form>
+            <p id="successMessage" style="display: none;">Successfully Registered!</p>
+        </div>
+    </div>
+    <script>
+        function showSuccessMessage() {
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            setTimeout(() => {
+                window.location.href = 'maindup.html';
+            }, 3000); // Redirect after 3 seconds (3000 milliseconds)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Internal Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* CSS styles for chat interface */
+        body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('images/chat.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+        #chat-box {
+            width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #chat-messages {
+            height: 300px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        #message-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        #send-button {
+            padding: 8px 15px;
+            margin-top: 10px;
+            background-color: #1877f2;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #send-button:hover {
+            background-color: #135ca6;
+        }
+        nav ul {
+    display: flex;
+    
+    
+    align-items: center;
+   
+    
+  }
+  nav img{
+    width:150px;
+  }
+  .nav-links{
+    flex: 1;
+    text-align:right;
+   
+    height: 10vh;
+    width: 100vw;
+  }
+  .nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    margin-top: 30px;
+    position: relative;
+  }
+  .nav-links ul li a{
+    color: #e9e4e5;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-right: 20px;
+  
+   
+  
+  }
+  .nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 2px;
+    background:#3309ce;
+    display:block;
+  
+    transition: 0.5;
+  
+  }
+  .nav-links ul li:hover::after{
+    width: 100%;
+  
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    
+}
+
+main {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 20px ;
+}
+.emoji-picker {
+    text-align: center;
+    margin: 5px;
+}
+
+.emoji-button {
+    padding: 0;
+    margin: 0 5px;
+}
+#attachment-list {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #e0e0e0; /* WhatsApp chat background */
+    border-top: 1px solid #ccc;
+}
+
+.attachment-item {
+    background-color: #DCF8C6;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 10px 5px 0 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.attachment-item:hover {
+    background-color: #BBF1A7;
+}
+
+.attachment-item span {
+    margin-right: 5px;
+}
+
+/* Style the file input to look like a button */
+#file-input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.custom-file-input {
+    background-color: #128C7E; /* WhatsApp green */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px 8px 10px 0;
+}
+
+.custom-file-input:hover {
+    background-color: #075E54; /* WhatsApp green hover */
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <section class="header">
+            <nav> 
+                <div class="nav-links">
+                    <ul>
+
+                        <li>
+                            <a href="main.html">
+                                <i class="fas fa-home"></i>
+                            </a>
+                        </li>
+                        <li><a href="teamreg.html" >TeamRegistration</a></li>
+                        <li><a href="mentorreg.html" >MentorRegistration</a></li>
+                        <li><a href="vote.html">Vote</a> </li>
+                        <li><a href="chat.html">Share Your Views</a> </li>
+                        <li><a href="checkpoint1.html">Checkpoints</a> </li>
+                        <li><a href="juryreview.html">JuryReviews</a> </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+             <br>
+            </nav>    
+    </header>
+    <div id="chat-box">
+        <div id="chat-messages">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="emoji-picker">
+            <button class="emoji-button">😀</button>
+            <button class="emoji-button">😂</button>
+            <button class="emoji-button">😍</button>
+            <button class="emoji-button">👍</button>
+            <button class="emoji-button">👏</button>
+        </div>
+        <input type="file" id="file-input" accept=".txt, .doc, .pdf, .ppt">
+        <label for="file-input" class="custom-file-input">Attach File</label>
+        <div id="attachment-list"></div>
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const messageInput = document.getElementById('message-input');
+            const chatMessages = document.getElementById('chat-messages');
+
+            if (messageInput.value.trim() !== '') {
+                const newMessage = document.createElement('p');
+                newMessage.textContent = messageInput.value;
+                chatMessages.appendChild(newMessage);
+                messageInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to the bottom
+            }
+        }
+    </script>
+</body>
+
+</html>

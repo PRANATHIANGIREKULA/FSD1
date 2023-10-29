@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Checkpoint Submission</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('images/checkpoint.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1877f2;
+            margin-bottom: 20px;
+        }
+
+        .task {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="checkbox"],
+        select {
+            margin-top: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #1877f2;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #135ca6;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.2); /* Larger checkbox */
+            margin-right: 10px;
+        }
+        nav ul {
+    display: flex;
+    
+    
+    align-items: center;
+   
+    
+  }
+  nav img{
+    width:150px;
+  }
+  .nav-links{
+    flex: 1;
+    text-align:right;
+    
+    height: 10vh;
+    width: 100vw;
+  }
+  .nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    margin-top: 30px;
+    position: relative;
+  }
+  .nav-links ul li a{
+    color: #e9e4e5;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-right: 20px;
+  
+   
+  
+  }
+  .nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 2px;
+    background:#3309ce;
+    display:block;
+  
+    transition: 0.5;
+  
+  }
+  .nav-links ul li:hover::after{
+    width: 100%;
+  
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    
+}
+
+main {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 20px ;
+}
+#attachment-list {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #e0e0e0; /* WhatsApp chat background */
+    border-top: 1px solid #ccc;
+}
+
+.attachment-item {
+    background-color: #DCF8C6;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 10px 5px 0 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.attachment-item:hover {
+    background-color: #BBF1A7;
+}
+
+.attachment-item span {
+    margin-right: 5px;
+}
+
+/* Style the file input to look like a button */
+#file-input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.custom-file-input {
+    background-color: #128C7E; /* WhatsApp green */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px 8px 10px 0;
+}
+
+.custom-file-input:hover {
+    background-color: #075E54; /* WhatsApp green hover */
+}
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+  
+    </style>
+</head>
+
+<body>
+    <header>
+        <section class="header">
+            <nav> 
+                <div class="nav-links">
+                    <ul>
+
+                        <li>
+                            <a href="main.html">
+                                <i class="fas fa-home"></i>
+                            </a>
+                        </li>
+                        <li><a href="teamreg.html" >TeamRegistration</a></li>
+                        <li><a href="mentorreg.html" >MentorRegistration</a></li>
+                        <li><a href="vote.html">Vote</a> </li>
+                        <li><a href="chat.html">Share Your Views</a> </li>
+                        <li><a href="checkpoint1.html">Checkpoints</a> </li>
+                        <li><a href="juryreview.html">JuryReviews</a> </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+             <br>
+            </nav>    
+    </header>
+    <div class="container">
+        <h1>Checkpoint Submission</h1>
+        <form>
+            <div class="task">
+                <form id="submission-form">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+        
+                    <label for="project">Project Name:</label>
+                    <input type="text" id="project" name="project" required>
+        
+                    <label for="description">Description of Work:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="task">
+                <label for="teamName">Team Name Submission</label>
+                <input type="checkbox" id="teamName" name="teamName" value="completed">
+            </div>
+            <div class="task">
+                <label for="teamLogo">Team Logo Submission</label>
+                <input type="checkbox" id="teamLogo" name="teamLogo" value="completed">
+            </div>
+            <div class="task">
+                <label for="ppt">PPT Submission</label>
+                <input type="checkbox" id="ppt" name="ppt" value="completed">
+            </div>
+            <div class="task">
+                <label for="basicInterface">Basic Interface Completed</label>
+                <input type="checkbox" id="basicInterface" name="basicInterface" value="completed">
+            </div>
+            <label for="checkpoint">Checkpoint:</label>
+            <select id="checkpoint" name="checkpoint" required>
+                <option value="checkpoint-1">Checkpoint 1</option>
+                <option value="checkpoint-2">Checkpoint 2</option>
+                <option value="checkpoint-3">Checkpoint 3</option>
+            </select>
+            <div class="task">
+                <label for="projectProgress">Project Progress</label>
+                <select id="projectProgress" name="projectProgress">
+                    <option value="0">Just Started</option>
+                    <option value="50">50% Completed</option>
+                    <option value="100">Completed</option>
+                </select>
+            </div>
+            <input type="file" id="file-input" accept=".txt, .doc, .pdf, .ppt">
+              <label for="file-input" class="custom-file-input">Attach File</label>
+                 <div id="attachment-list"></div>
+               <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

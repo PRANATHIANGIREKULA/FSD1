@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mentorregistration</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="mentorreg.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+          .center {
+                 height: 80vh; /* Set a fixed height for scrolling */
+                 overflow: auto; /* Enable scrolling if content exceeds the height */
+                 margin-top: 50px; /* Additional margin for moving the form downwards */
+            }
+    </style>
+  </head>
+  <body>
+    <header>
+        <section class="header">
+            <nav> 
+                <div class="nav-links">
+                    <ul>
+
+                        <li>
+                            <a href="main.html">
+                                <i class="fas fa-home"></i>
+                            </a>
+                        </li>
+                        <li><a href="teamreg.html" >TeamRegistration</a></li>
+                        <li><a href="mentorreg.html" >MentorRegistration</a></li>
+                        <li><a href="vote.html">Vote</a> </li>
+                        <li><a href="chat.html">Share Your Views</a> </li>
+                        <li><a href="checkpoint1.html">Checkpoints</a> </li>
+                        <li><a href="juryreview.html">JuryReviews</a> </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+             <br>
+            </nav>    
+    </header>
+    <div class="container">
+      <div class="center">
+          <h1>Mentor Registration</h1>
+          <form method="POST" action="">
+              <div class="txt_field">
+                  <input type="text" name="name" required>
+                  <span></span>
+                  <label>Name</label>
+              </div>
+              <div class="txt_field">
+                  <input type="email" name="email" required>
+                  <span></span>
+                  <label>Email</label>
+              </div>
+              <div class="txt_field">
+                <input type="text" name="team_name" required>
+                <span></span>
+                <label>Team Name</label>
+            </div>
+              
+            <input name="submit" type="Submit" value="Register" onclick="showSuccessMessage()">  
+          </form>
+          <p id="successMessage" style="display: none;">Successfully Registered!</p>
+      </div>
+  </div>
+  <script>
+    function showSuccessMessage() {
+        const successMessage = document.getElementById('successMessage');
+        successMessage.style.display = 'block';
+        setTimeout(() => {
+            window.location.href = 'maindup.html';
+        }, 3000); // Redirect after 3 seconds (3000 milliseconds)
+    }
+</script>
+  </body>
+</html>

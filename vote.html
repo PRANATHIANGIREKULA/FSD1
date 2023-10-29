@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting for Ideas</title>
+    <link rel="stylesheet" href="vote.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <section class="header">
+            <nav>
+                
+                <div class="nav-links">
+                    <ul>
+                        <li>
+                            <a href="main.html">
+                                <i class="fas fa-home"></i>
+                            </a>
+                        </li>
+                        <li><a href="teamreg.html" >TeamRegistration</a></li>
+                        <li><a href="mentorreg.html" >MentorRegistration</a></li>
+                        <li><a href="vote.html">Vote</a> </li>
+                        <li><a href="chat.html">Share Your Views</a> </li>
+                        <li><a href="checkpoint1.html">Checkpoints</a> </li>
+                        <li><a href="juryreview.html">JuryReviews</a> </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <br>
+            </nav>    
+    </header>
+
+    <main>
+        <h1>Voting for Hackathon Ideas</h1>
+        <div class="idea-container">
+            <div class="idea">
+                <h3>Idea 1</h3>
+                <p>Description of the first idea.</p>
+                <button class="vote-btn" onclick="voteForIdea(1)">Vote</button>
+                <span class="vote-count" id="vote-count-1">5</span>
+            </div>
+            <div class="idea">
+                <h3>Idea 2</h3>
+                <p>Description of the second idea.</p>
+                <button class="vote-btn" onclick="voteForIdea(2)">Vote</button>
+                <span class="vote-count" id="vote-count-2">8</span>
+            </div>
+            <!-- Display more existing ideas with their respective vote counts -->
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+
+    <script>
+        function voteForIdea(ideaId) {
+            const voteCountElement = document.getElementById(vote-count-${ideaId});
+            const currentCount = parseInt(voteCountElement.textContent);
+            voteCountElement.textContent = currentCount + 1;
+            // Simulating sending this vote information to the server for storage and further processing
+            // In a real application, you'd typically send an API call to store the vote in your database.
+        }
+    </script>
+</body>
+
+</html>

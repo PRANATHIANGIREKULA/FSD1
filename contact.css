@@ -1,0 +1,124 @@
+contactstyles.css
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    
+}
+
+main {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 20px ;
+}
+
+h1 {
+    margin: 0;
+}
+
+
+
+#contactInfo, #contactForm {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    color: rgb(24, 54, 105);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #909bfd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7d62f5;
+}
+nav ul {
+    display: flex;
+    
+    
+    align-items: center;
+   
+    
+  }
+  nav img{
+    width:150px;
+  }
+  .nav-links{
+    flex: 1;
+    text-align:right;
+   
+    height: 10vh;
+    width: 100vw;
+  }
+  .nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    margin-top: 30px;
+    position: relative;
+  }
+  .nav-links ul li a{
+    color: #e9e4e5;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-right: 20px;
+  
+   
+  
+  }
+  .nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 2px;
+    background:#3309ce;
+    display:block;
+  
+    transition: 0.5;
+  
+  }
+  .nav-links ul li:hover::after{
+    width: 100%;
+  
+  }
